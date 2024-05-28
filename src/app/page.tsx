@@ -1,9 +1,16 @@
+import Hero from "@/components/Hero";
+import Container from "@/components/common/Container";
+import { socials } from "@/constants/data";
+import Image from "next/image";
+import Link from "next/link";
+import { FaFacebookF, FaInstagram } from "react-icons/fa6";
+
 export default function Home() {
     return (
-        <div className="">
-            <h1 className="text-3xl font-bold underline">مرحبا</h1>
-
-            <button className="bg-primary text-foreground py-2 px-4 rounded-full m-12 hover:bg-primary/80">تسجيل الدخول</button>
-        </div>
+        <>
+            <Container className="py-12">
+               <Hero />
+            </Container>
+        </>
     );
 }

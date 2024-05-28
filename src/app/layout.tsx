@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { bryant, changa, comfortaa } from "@/styles/fonts";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Bugatti Burger",
@@ -22,9 +23,16 @@ function RootLayout({ children }: Readonly<RootLayoutProps>) {
             className={cn(comfortaa.variable, bryant.variable, changa.variable)}
         >
             <body className={cn("bg-background font-changa grid grid-cols-1")}>
+                <Image
+                    src="/assets/base-bg.jpg"
+                    width={1920}
+                    height={1080}
+                    alt="home background"
+                    className="fixed inset-0 w-full h-full object-cover -z-10"
+                />
                 <Header />
                 <main className="min-h-screen pt-[--header-height] [&>*]:h-full">{children}</main>
-                <Footer />
+                {/* <Footer /> */}
             </body>
         </html>
     );

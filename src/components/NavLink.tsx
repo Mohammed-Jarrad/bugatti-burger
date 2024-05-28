@@ -3,8 +3,7 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconType } from "react-icons";
-
+import { motion } from "framer-motion";
 export interface NavLinkProps {
     href: string;
     title: string;
@@ -18,9 +17,25 @@ function NavLink({ href, title, icon, className }: NavLinkProps) {
 
     return (
         <li className={cn("", className)}>
-            <Link href={href} className="flex items-center gap-1.5">
+            <Link
+                data-active={isActive}
+                href={href}
+                className={cn(
+                    "transition relative flex items-center gap-1.5 py-1.5 px-3",
+                    className
+                )}
+            >
                 {icon}
-                <span>{title}</span>
+                <span className={cn(" mix-blend-exclusion")}>{title}</span>
+
+                {isActive && (
+                    <motion.div
+                        layoutId="active-link"
+                        className="absolute inset-0 bg-white/70 -z-10"
+                        initial={{ skewX: -12 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 28 }}
+                    />
+                )}
             </Link>
         </li>
     );
