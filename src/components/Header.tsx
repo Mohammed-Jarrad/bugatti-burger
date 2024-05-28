@@ -9,22 +9,11 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const { scrollY } = useScroll();
-
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        if (latest > 50) {
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
-        }
-    });
-
     return (
         <header
             className={cn(
                 "h-[--header-height] grid fixed w-full top-0 z-50",
-                isScrolled ? "bg-black/50 backdrop-blur-lg" : "bg-transparent"
+                "bg-black/10 backdrop-blur-lg supports-[backdrop-filter]:bg-black/20 supports-[backdrop-filter]:backdrop-blur-lg"
             )}
         >
             <Container className="flex items-center justify-between my-1.5 text-xs md:text-sm">

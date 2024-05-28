@@ -16,7 +16,7 @@ const Meel: React.FC<MeelProps> = ({ meel, index }) => {
         <motion.div
             initial={{ opacity: 0, x: index % 2 ? -100 : 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
             className="p-3 flex-c gap-4"
         >

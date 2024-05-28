@@ -16,7 +16,7 @@ function NavLink({ href, title, icon, className }: NavLinkProps) {
     const isActive = pathname === href;
 
     return (
-        <li className={cn("", className)}>
+        <motion.li className={cn("", className)}>
             <Link
                 data-active={isActive}
                 href={href}
@@ -37,7 +37,7 @@ function NavLink({ href, title, icon, className }: NavLinkProps) {
                     />
                 )}
             </Link>
-        </li>
+        </motion.li>
     );
 }
 

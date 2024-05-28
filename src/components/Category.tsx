@@ -7,17 +7,18 @@ import { motion } from "framer-motion";
 
 type CategoryProps = {
     category: ICategory;
+    index: number;
 };
 
-const Category: React.FC<CategoryProps> = ({ category }) => {
+const Category: React.FC<CategoryProps> = ({ category, index }) => {
     return (
         <motion.div
-         whileTap={{ scale: 0.97 }}
-         whileHover={{ scale: 1.05 }}>
-            <Link
-                href={`/menu/${category.id}`}
-                className="group cursor-pointer border p-3 rounded-lg flex-c items-center gap-3 backdrop-blur-sm bg-white/5"
-            >
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="cursor-pointer hover:ring-1 hover:ring-white/20 p-3 rounded-lg backdrop-blur-sm bg-white/5"
+        >
+            <Link href={`/menu/${category.id}`} className="group flex-c items-center gap-3 ">
                 <Image
                     src="/assets/Bugatti-logo.svg"
                     alt={category.title}
@@ -25,7 +26,7 @@ const Category: React.FC<CategoryProps> = ({ category }) => {
                     height={200}
                     className="size-[200px] rounded-full object-cover"
                 />
-                <p className="group-hover:text-primary transition">{category.title}</p>
+                <motion.p className="group-hover:text-primary">{category.title}</motion.p>
             </Link>
         </motion.div>
     );
