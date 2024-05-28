@@ -256,7 +256,7 @@ export const meels: IMeel[] = [
     },
     {
         name: "أصابع موزاريلا",
-        image: "/meels/بورجر أسادو.jpg",
+        image: "/meels/أصابع موزاريلا.jpg",
         categoryId: 10,
         price: 20,
         ingredients: ["6 أصابع", "شيلي حلو"],
