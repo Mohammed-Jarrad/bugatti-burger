@@ -31,7 +31,7 @@ function RootLayout({ children }: Readonly<RootLayoutProps>) {
                     className="fixed inset-0 w-full h-full object-cover -z-10"
                 />
                 <Header />
-                <main className="min-h-screen pt-[--header-height] [&>*]:h-full">{children}</main>
+                <main className="min-h-dvh pt-[--header-height] [&>*]:h-full">{children}</main>
                 {/* <Footer /> */}
             </body>
         </html>
